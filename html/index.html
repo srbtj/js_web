@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Js源码实现Web</title>
+    <link href="../style/index.css" rel="stylesheet">
+</head>
+<body>
+<div id="contain">
+    <div id="headMain">
+        <div id="header">
+            <div id="logo">
+                <a href="javascript:;">
+                    <img src="../images/logo.png">
+                </a>
+            </div>
+            <ul id="nav">
+                <li>
+                    <a href="javascript:;">
+                        <div class="up"><img src="../images/home_gruen.png"></div>
+                        <div><img src="../images/home.png"></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <div class="up">Course</div>
+                        <div>Course</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <div class="up">Works</div>
+                        <div>Works</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <div class="up">About</div>
+                        <div>About</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <div class="up">Team</div>
+                        <div>Team</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="content"></div>
+</div>
+<script src="../js/index.js"></script>
+<script>
+    window.onload = function(){
+
+        var oUl = $('nav');
+//        var oLi = oUl.getElementsByTagName('li')[1];
+//        console.info(getStyle(oLi,'width'));
+
+//        var oLi = oUl.getElementsByTagName('li');
+//
+//        for(var attr in oLi){
+//
+//            oLi[attr].index = attr;
+//            oLi[attr].onmouseover = function(){
+//
+//               var iWidth = Math.round(parseFloat(getStyle(this,'width')));
+//
+//               var oDiv = this.children[0].children[0];
+//               startMove(oDiv,{width:iWidth+1},5);
+//            };
+//            oLi[attr].onmouseout = function(){
+//
+//                var oDiv = this.children[0].children[0];
+//                startMove(oDiv,{width:0},5);
+//            }
+//        }
+    }
+</script>
+</body>
+</html>
