@@ -15,10 +15,39 @@ a:hover{ cursor: pointer;}
 
 /** header start */
 #headMain{ height: 80px; width: 100%; background-color: white;}
-#header{ height: 100%; width: 1100px; margin: 0 auto; }
+#header{ height: 100%; width: 1100px; margin: 0 auto; position: relative; }
 #logo{ margin-top: 30px; float: left;}
 #nav{ float: right; margin-top: 45px;}
 #nav li{ float: left; margin-left: 40px; position: relative;}
 #nav li .up{ color:#000000; position: absolute; top: 0px; left: 0px; overflow: hidden; width:0px; transition:0.5s width;}
 #nav li:hover .up{ width:100%;}
+#header .arrow{ position: absolute; left: 50%; bottom: -12px; z-index: 100;
+    background: url("../images/menuIndicator.png") no-repeat; width: 21px; height: 12px;}
 /** header end */
+
+/** content start */
+#content{ width:100%;  position: relative;  -overflow: hidden;}
+#list{ width: 100%; position: absolute; top: 0; left: 0;}
+#list .liList{ width: 2000px; position: relative; left:50%; top:0px; margin-left: -1000px; overflow: hidden;  }
+#list .liList .divList{ width: 1100px; margin: 0 auto; height: 550px; background-color: greenyellow;}
+/** content end */
+
+/** home start */
+#home{background: url("../images/bg1.jpg") no-repeat;}
+/** home end */
+
+/** Course start */
+#course{background: url("../images/bg2.jpg") no-repeat;}
+/** Course end */
+
+/** Works start */
+#works{background: url("../images/bg3.jpg") no-repeat;}
+/** Works end */
+
+/** About start */
+#about{background: url("../images/bg4.jpg") no-repeat;}
+/** About end */
+
+/** Team start */
+#team{background: url("../images/bg5.jpg") no-repeat;}
+/** Team end */

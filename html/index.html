@@ -46,36 +46,72 @@
                     </a>
                 </li>
             </ul>
+            <div class="arrow"></div>
         </div>
     </div>
-    <div id="content"></div>
+
+    <div id="content">
+        <ul id="list">
+            <li id="home" class="liList">
+                <div class="divList">Home</div>
+            </li>
+            <li id="course" class="liList">
+                <div class="divList">Course</div>
+            </li>
+            <li id="works" class="liList">
+                <div class="divList">Works</div>
+            </li>
+            <li id="about" class="liList">
+                <div class="divList">About</div>
+            </li>
+            <li id="team" class="liList">
+                <div class="divList">Team</div>
+            </li>
+        </ul>
+    </div>
 </div>
 <script src="../js/index.js"></script>
 <script>
     window.onload = function(){
 
         var oUl = $('nav');
+        var iNow = 0;  /* 当前箭头的下标 */
+//        var oDiv = $(header);
 //        var oLi = oUl.getElementsByTagName('li')[1];
 //        console.info(getStyle(oLi,'width'));
 
-//        var oLi = oUl.getElementsByTagName('li');
-//
-//        for(var attr in oLi){
-//
-//            oLi[attr].index = attr;
-//            oLi[attr].onmouseover = function(){
-//
-//               var iWidth = Math.round(parseFloat(getStyle(this,'width')));
-//
-//               var oDiv = this.children[0].children[0];
-//               startMove(oDiv,{width:iWidth+1},5);
-//            };
-//            oLi[attr].onmouseout = function(){
-//
-//                var oDiv = this.children[0].children[0];
-//                startMove(oDiv,{width:0},5);
-//            }
-//        }
+        var oLi = oUl.getElementsByTagName('li');
+
+        var oDiv = getElementByClassName($('header'),'div','arrow')[0];
+
+        var oDivLeft = Math.round(oLi[0].offsetLeft + oLi[0].clientWidth / 2 - oDiv.offsetWidth / 2 );
+
+        startMove(oDiv,{left:oDivLeft},0.2);
+
+        for(var attr in oLi){
+
+            oLi[attr].index = attr;
+            oLi[attr].onmouseover = function(){
+                var iLeft = getLeft(this.index,oDiv);
+                startMove(oDiv,{left:iLeft},0.2)
+            }
+            oLi[attr].onmouseout = function(){
+
+                var iLeft = getLeft(iNow,oDiv);
+                startMove(oDiv,{left:iLeft},0.2);
+            }
+
+            oLi[attr].onclick = function(){
+                iNow = this.index;
+                var iLeft = getLeft(iNow,oDiv);
+                startMove(oDiv,{left:iLeft},0.2);
+            }
+        }
+
+        function getLeft(index,obj){
+            return Math.round(oLi[index].offsetLeft + oLi[index].offsetWidth / 2 - obj.offsetWidth / 2);
+        }
+
     }
 </script>
 </body>
